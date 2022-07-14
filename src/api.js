@@ -1,6 +1,7 @@
 const express = require('express');
 require('express-async-errors');
 const authRouter = require('./routers/auth.routes');
+const userRouter = require('./routers/user.routes');
 
 // ...
 
@@ -11,6 +12,7 @@ app.use(express.json());
 // ...
 
 app.use('/login', authRouter);
+app.use('/user', userRouter);
 
 app.use((err, _req, res, _next) => {
   const { name, message } = err;
