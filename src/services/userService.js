@@ -20,6 +20,10 @@ const userService = {
     image: Joi.string().required(),
   })),
 
+  validateParamsId: runSchema(Joi.object({
+    id: Joi.number().integer().positive().required(),
+  })),
+
   create: async ({ displayName, email, password, image }) => {
     const checkUser = await db.User.findOne({
       where: { email },
@@ -47,6 +51,19 @@ const userService = {
       attributes: { exclude: ['password'] },
     });
     return users;
+  },
+
+  listById: async (id) => {
+    const user = await db.User.findByPk(id, {
+      attributes: { exclude: ['password'] },
+    });
+
+    if (!user) {
+      const error = new Error('User does not exist');
+      error.name = 'NotFoundError';
+      throw error;
+    }
+    return user;
   },
 };
 
