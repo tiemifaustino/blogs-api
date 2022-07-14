@@ -9,7 +9,7 @@ const userController = {
   },
 
   list: async (req, res) => {
-    const token = jwtMiddleware.validateToken(req.headers.authorization);
+    jwtMiddleware.validateToken(req.headers.authorization);
     const users = await userService.list();
     res.status(200).json(users);
   },
