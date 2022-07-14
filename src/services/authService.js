@@ -1,7 +1,7 @@
 const Joi = require('joi');
-const { runSchema } = require('./validators');
+const { runSchema } = require('../middlewares/validators');
 const db = require('../database/models');
-const jwtService = require('./jwtService');
+const jwtMiddleware = require('../middlewares/jwtMiddleware');
 
 const authService = {
   validateBody: runSchema(Joi.object({
@@ -28,7 +28,7 @@ const authService = {
     }
 
     const { password, ...userWithoutPassword } = user.dataValues;
-    const token = jwtService.createToken(userWithoutPassword);
+    const token = jwtMiddleware.createToken(userWithoutPassword);
     return token;
   },
 };

@@ -1,5 +1,5 @@
 const Joi = require('joi');
-const { runSchema } = require('./validators');
+const { runSchema } = require('../middlewares/validators');
 const db = require('../database/models');
 const authService = require('./authService');
 
