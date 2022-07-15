@@ -23,15 +23,9 @@ const blogPostsService = {
     return blogPost;
   },
 
-  list: async (id) => {
-    const users = await db.BlogPost.findAll({
-      where: { id },
-      include: [{ model: db.User, as: 'user' }],
-      attributes: { exclude: ['password'] },
-    });
-
+  list: async (userId) => {
     const usersAndCategories = await db.BlogPost.findAll({
-      where: { id: users[0].dataValues.id, userId: id },
+      where: { userId },
       include: [
         { model: db.User, as: 'user', attributes: { exclude: ['password'] } },
         { model: db.Category, as: 'categories', through: { attributes: [] } },
