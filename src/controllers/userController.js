@@ -20,6 +20,12 @@ const userController = {
     const user = await userService.listById(id);
     res.status(200).json(user);
   },
+
+  delete: async (req, res) => {
+    const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
+    await userService.delete(id);
+    res.sendStatus(204);
+  },
 };
 
 module.exports = userController;
