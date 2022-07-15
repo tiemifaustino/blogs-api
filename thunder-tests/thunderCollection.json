@@ -1,0 +1,24 @@
+[
+  {
+    "_id": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "colName": "Blog API",
+    "created": "2022-07-15T11:35:19.484Z",
+    "sortNum": 10000,
+    "folders": [
+      {
+        "_id": "6b28373a-a736-47f6-9729-feab7d244387",
+        "name": "blogPosts",
+        "containerId": "",
+        "created": "2022-07-15T11:35:54.916Z",
+        "sortNum": 10000
+      },
+      {
+        "_id": "aae0e549-9888-434c-9554-be82b5874f21",
+        "name": "auth",
+        "containerId": "",
+        "created": "2022-07-15T11:36:40.775Z",
+        "sortNum": 20000
+      }
+    ]
+  }
+]

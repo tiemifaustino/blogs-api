@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       foreignKey: true,
     },
-    published: DataTypes.STRING,
-    updated: DataTypes.STRING,
+    published: DataTypes.DATE,
+    updated: DataTypes.DATE,
   }, {
     tableName: 'BlogPosts',
     timestamps: false
