@@ -10,11 +10,19 @@ const categoriesService = {
     }),
   })),
 
-  // checkIfExists: async (arrayOfId) => {
-  //   const checked = await db.Category.findAll({
-  //     where: {},
-  //   });
-  // },
+  checkIfExists: async (arrayOfId) => {
+    const checked = await db.Category.findAndCountAll({
+      where: { id: arrayOfId },
+    });
+
+    if (arrayOfId.length !== checked.count) {
+      const error = new Error('"categoryIds" not found');
+      error.name = 'ValidationError';
+      throw error;
+    }
+
+    return checked;
+  },
 
   create: async (name) => {
     const category = await db.Category.create({ name });
