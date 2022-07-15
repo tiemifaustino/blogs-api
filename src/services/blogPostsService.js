@@ -16,13 +16,29 @@ const blogPostsService = {
     'any.required': 'Some required fields are missing',
   })),
 
-  // validateBodyUpdate: runSchema(Joi.object({
-  //   title: Joi.string().required(),
-  //   content: Joi.string().required(),
-  // }).messages({
-  //   'string.empty': 'Some required fields are missing',
-  //   'any.required': 'Some required fields are missing',
-  // })),
+  validateBodyUpdate: runSchema(Joi.object({
+    title: Joi.string().required(),
+    content: Joi.string().required(),
+  }).messages({
+    'string.empty': 'Some required fields are missing',
+    'any.required': 'Some required fields are missing',
+  })),
+  
+  update: async (id, { title, content }) => {
+    // a query UPDATE retorna zero quando não encontra o id (WHERE)
+    // retorna como array, por isso a desestruturação
+    const [updated] = await db.BlogPost.update(
+      { title, content },
+      { where: { id } },
+    );
+
+    if (!updated) {
+      const error = new Error('Unauthorized user');
+      error.name = 'UnauthorizedError';
+      throw error;
+    }
+    return updated;
+  },
 
   create: async (userId, { title, content }) => {
     const blogPost = await db.BlogPost.create({

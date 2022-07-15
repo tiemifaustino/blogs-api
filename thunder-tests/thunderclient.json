@@ -70,7 +70,7 @@
     "method": "PUT",
     "sortNum": 40000,
     "created": "2022-07-15T17:26:26.388Z",
-    "modified": "2022-07-15T17:27:41.995Z",
+    "modified": "2022-07-15T18:51:12.321Z",
     "headers": [
       {
         "name": "Authorization",
@@ -80,7 +80,7 @@
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\"\n}",
+      "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"{{#string}}\"\n}",
       "form": []
     },
     "tests": []

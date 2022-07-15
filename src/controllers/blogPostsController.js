@@ -25,6 +25,15 @@ const blogPostsController = {
     const blogPost = await blogPostsService.listById(postId.id, id);
     res.status(200).json(blogPost);
   },
+
+  update: async (req, res) => {
+    const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization); // valida token
+    const postId = blogPostsService.validateParamsId(req.params); // valida id do post
+    const postToBeUpdated = blogPostsService.validateBodyUpdate(req.body); // valida body da req
+    await blogPostsService.update(postId.id, postToBeUpdated); // faz o update e verifica se id existe
+    const updated = await blogPostsService.listById(postId.id, id); // seleciona o post atualizado
+    res.status(200).json(updated);
+  },
 };
 
 module.exports = blogPostsController;
