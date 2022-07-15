@@ -34,6 +34,13 @@ const blogPostsController = {
     const updated = await blogPostsService.listById(postId.id, id); // seleciona o post atualizado
     res.status(200).json(updated);
   },
+
+  delete: async (req, res) => {
+    const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
+    const postId = blogPostsService.validateParamsId(req.params);
+    await blogPostsService.delete(postId.id, id);
+    res.sendStatus(204);
+  },
 };
 
 module.exports = blogPostsController;
