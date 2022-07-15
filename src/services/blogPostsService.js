@@ -23,22 +23,22 @@ const blogPostsService = {
     return blogPost;
   },
 
-  list: async (idUser) => {
-    // const users = await db.BlogPost.findAll({
-    //   where: { id },
-    //   include: [{ model: db.User, as: 'users' }],
-    //   attributes: { exclude: ['password'] },
-    // });
+  list: async (id) => {
+    const users = await db.BlogPost.findAll({
+      where: { id },
+      include: [{ model: db.User, as: 'user' }],
+      attributes: { exclude: ['password'] },
+    });
 
-    const categories = await db.BlogPost.findAll({
-      where: { id: 1, userId: idUser },
+    const usersAndCategories = await db.BlogPost.findAll({
+      where: { id: users[0].dataValues.id, userId: id },
       include: [
-        { model: db.User, as: 'users', attributes: { exclude: ['password'] } },
+        { model: db.User, as: 'user', attributes: { exclude: ['password'] } },
         { model: db.Category, as: 'categories', through: { attributes: [] } },
       ],
       attributes: { exclude: ['UserId'] },
     });
-    return categories;
+    return usersAndCategories;
   },
 };                                      
 
