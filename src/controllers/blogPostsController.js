@@ -41,6 +41,14 @@ const blogPostsController = {
     await blogPostsService.delete(postId.id, id);
     res.sendStatus(204);
   },
+
+  search: async (req, res) => {
+    jwtMiddleware.validateToken(req.headers.authorization);
+    console.log(req.query);
+    const { q } = req.query;
+    const found = await blogPostsService.search(q);
+    res.status(200).json(found);
+  },
 };
 
 module.exports = blogPostsController;

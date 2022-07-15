@@ -100,6 +100,18 @@ const blogPostsService = {
 
     await db.BlogPost.destroy({ where: { id: postId } });
   },
+
+  search: async (q) => {
+    const findPosts = await db.BlogPost.findAll({
+      where: { title: { [q]: '%q%' } },
+      include: [
+        { model: db.User, as: 'user', attributes: { exclude: ['password'] } },
+        { model: db.Category, as: 'categories', through: { attributes: [] } },
+      ],
+      attributes: { exclude: ['UserId'] },
+    });
+    return findPosts;
+  },
 };                                      
 
 module.exports = blogPostsService;

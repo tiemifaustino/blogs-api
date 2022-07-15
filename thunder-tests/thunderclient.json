@@ -141,5 +141,30 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "748f9d39-50ba-4c97-819c-0720c558bf92",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/search",
+    "url": "localhost:3000/search?q=vamos",
+    "method": "GET",
+    "sortNum": 60000,
+    "created": "2022-07-15T22:26:42.409Z",
+    "modified": "2022-07-15T22:46:23.151Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1NzkyNTE2OX0.sMXUEeOGIIsNL2YM77V56FeuWStdCtcM8NZl5TFObPI"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "vamos",
+        "isPath": false
+      }
+    ],
+    "tests": []
   }
 ]
