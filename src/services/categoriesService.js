@@ -10,6 +10,12 @@ const categoriesService = {
     }),
   })),
 
+  checkIfExists: async (arrayOfId) => {
+    const checked = await db.Category.findAll({
+      where: {},
+    });
+  },
+
   create: async (name) => {
     const category = await db.Category.create({ name });
     return category;
