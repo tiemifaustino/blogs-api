@@ -60,5 +60,48 @@
     ],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "6f1f6251-22c6-463b-8ac0-b0b18dd61801",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/:id",
+    "url": "localhost:3000/post/1",
+    "method": "PUT",
+    "sortNum": 40000,
+    "created": "2022-07-15T17:26:26.388Z",
+    "modified": "2022-07-15T17:27:41.995Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1Nzg4NTA0NX0.NbsGOeR5O-zJzUf7ytVTsftOWid9vYKlA89x3kY--tM"
+      }
+    ],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"title\": \"Latest updates, August 1st\",\n  \"content\": \"The whole text for the blog post goes here in this key\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ca4b8eaf-ff00-473f-a38c-355945a49f89",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/:id",
+    "url": "localhost:3000/post/1",
+    "method": "GET",
+    "sortNum": 50000,
+    "created": "2022-07-15T17:28:55.169Z",
+    "modified": "2022-07-15T17:48:05.634Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1Nzg4NTA0NX0.NbsGOeR5O-zJzUf7ytVTsftOWid9vYKlA89x3kY--tM"
+      }
+    ],
+    "params": [],
+    "tests": []
   }
 ]

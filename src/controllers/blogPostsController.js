@@ -18,6 +18,13 @@ const blogPostsController = {
     const blogPosts = await blogPostsService.list(id);
     res.status(200).json(blogPosts);
   },
+
+  listById: async (req, res) => {
+    const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
+    const postId = blogPostsService.validateParamsId(req.params);
+    const blogPost = await blogPostsService.listById(postId.id, id);
+    res.status(200).json(blogPost);
+  },
 };
 
 module.exports = blogPostsController;
