@@ -12,6 +12,12 @@ const blogPostsController = {
     await postCategoriesService.create(dataValues.id, categoryIds.rows);
     res.status(201).json(dataValues);
   },
+
+  list: async (req, res) => {
+    const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
+    const blogPosts = await blogPostsService.list(id);
+    res.status(200).json(blogPosts);
+  },
 };
 
 module.exports = blogPostsController;

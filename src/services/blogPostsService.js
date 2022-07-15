@@ -22,6 +22,24 @@ const blogPostsService = {
     });
     return blogPost;
   },
+
+  list: async (idUser) => {
+    // const users = await db.BlogPost.findAll({
+    //   where: { id },
+    //   include: [{ model: db.User, as: 'users' }],
+    //   attributes: { exclude: ['password'] },
+    // });
+
+    const categories = await db.BlogPost.findAll({
+      where: { id: 1, userId: idUser },
+      include: [
+        { model: db.User, as: 'users', attributes: { exclude: ['password'] } },
+        { model: db.Category, as: 'categories', through: { attributes: [] } },
+      ],
+      attributes: { exclude: ['UserId'] },
+    });
+    return categories;
+  },
 };                                      
 
 module.exports = blogPostsService;
