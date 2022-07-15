@@ -10,7 +10,6 @@ const blogPostsService = {
   }).messages({
     'string.empty': 'Some required fields are missing',
     'any.required': 'Some required fields are missing',
-    'array.min': '"categoryIds" not found',
   })),
 
   create: async (userId, { title, content }) => {
