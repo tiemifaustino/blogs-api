@@ -104,7 +104,12 @@ const blogPostsService = {
 
   search: async (q) => {
     const findPosts = await db.BlogPost.findAll({
-      where: { title: { [Op.substring]: q } },
+      where: {
+        [Op.or]: [
+          { title: { [Op.substring]: q } },
+          { content: { [Op.substring]: q } }, 
+        ],
+      },
       include: [
         { model: db.User, as: 'user', attributes: { exclude: ['password'] } },
         { model: db.Category, as: 'categories', through: { attributes: [] } },

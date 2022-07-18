@@ -247,11 +247,11 @@
     "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
     "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
     "name": "/post/search",
-    "url": "localhost:3000/post/search?q=vamos",
+    "url": "localhost:3000/post/search?q=",
     "method": "GET",
     "sortNum": 35000,
     "created": "2022-07-18T13:11:19.446Z",
-    "modified": "2022-07-18T13:40:06.161Z",
+    "modified": "2022-07-18T13:50:44.996Z",
     "headers": [
       {
         "name": "Authorization",
@@ -261,7 +261,7 @@
     "params": [
       {
         "name": "q",
-        "value": "vamos",
+        "value": "",
         "isPath": false
       }
     ],

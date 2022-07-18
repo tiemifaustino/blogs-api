@@ -43,7 +43,6 @@ const blogPostsController = {
   },
 
   search: async (req, res) => {
-    console.log('estou no Controller');
     jwtMiddleware.validateToken(req.headers.authorization);
     const { q } = req.query;
     const found = await blogPostsService.search(q);
