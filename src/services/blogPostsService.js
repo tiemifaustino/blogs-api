@@ -1,4 +1,5 @@
 const Joi = require('joi');
+const { Op } = require('sequelize');
 const { runSchema } = require('../middlewares/validators');
 const db = require('../database/models');
 
@@ -103,7 +104,7 @@ const blogPostsService = {
 
   search: async (q) => {
     const findPosts = await db.BlogPost.findAll({
-      where: { title: { [q]: '%q%' } },
+      where: { title: { [Op.substring]: q } },
       include: [
         { model: db.User, as: 'user', attributes: { exclude: ['password'] } },
         { model: db.Category, as: 'categories', through: { attributes: [] } },

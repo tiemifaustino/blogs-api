@@ -14,7 +14,7 @@
       },
       {
         "_id": "aae0e549-9888-434c-9554-be82b5874f21",
-        "name": "auth",
+        "name": "login",
         "containerId": "",
         "created": "2022-07-15T11:36:40.775Z",
         "sortNum": 20000
@@ -25,6 +25,13 @@
         "containerId": "",
         "created": "2022-07-15T21:52:38.951Z",
         "sortNum": 40000
+      },
+      {
+        "_id": "b5573bd4-0598-42c7-955e-328e657a17f2",
+        "name": "categories",
+        "containerId": "",
+        "created": "2022-07-18T13:04:55.927Z",
+        "sortNum": 50000
       }
     ]
   }
