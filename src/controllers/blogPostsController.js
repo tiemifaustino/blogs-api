@@ -21,24 +21,24 @@ const blogPostsController = {
 
   listById: async (req, res) => {
     const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
-    const postId = blogPostsService.validateParamsId(req.params);
-    const blogPost = await blogPostsService.listById(postId.id, id);
+    const postId = blogPostsService.validateParamsId(req.params.id);
+    const blogPost = await blogPostsService.listById(postId, id);
     res.status(200).json(blogPost);
   },
 
   update: async (req, res) => {
     const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization); // valida token
-    const postId = blogPostsService.validateParamsId(req.params); // valida id do post
+    const postId = blogPostsService.validateParamsId(req.params.id); // valida id do post
     const postToBeUpdated = blogPostsService.validateBodyUpdate(req.body); // valida body da req
     await blogPostsService.update(postId.id, postToBeUpdated); // faz o update e verifica se id existe
-    const updated = await blogPostsService.listById(postId.id, id); // seleciona o post atualizado
+    const updated = await blogPostsService.listById(postId, id); // seleciona o post atualizado
     res.status(200).json(updated);
   },
 
   delete: async (req, res) => {
     const { data: { id } } = jwtMiddleware.validateToken(req.headers.authorization);
-    const postId = blogPostsService.validateParamsId(req.params);
-    await blogPostsService.delete(postId.id, id);
+    const postId = blogPostsService.validateParamsId(req.params.id);
+    await blogPostsService.delete(postId, id);
     res.sendStatus(204);
   },
 
