@@ -92,9 +92,9 @@
     "name": "/post/:id",
     "url": "localhost:3000/post/1",
     "method": "GET",
-    "sortNum": 50000,
+    "sortNum": 39687.5,
     "created": "2022-07-15T17:28:55.169Z",
-    "modified": "2022-07-18T13:09:02.426Z",
+    "modified": "2022-07-18T19:40:31.335Z",
     "headers": [
       {
         "name": "Authorization",
@@ -168,9 +168,9 @@
     "name": "/user/:id",
     "url": "localhost:3000/user/1",
     "method": "GET",
-    "sortNum": 80000,
+    "sortNum": 72500,
     "created": "2022-07-18T13:04:06.853Z",
-    "modified": "2022-07-18T13:04:28.682Z",
+    "modified": "2022-07-18T19:40:23.005Z",
     "headers": [
       {
         "name": "Authorization",
@@ -246,7 +246,7 @@
     "_id": "7a1eec11-d492-455c-898d-c01ea3d9c38d",
     "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
     "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
-    "name": "/post/search",
+    "name": "/post/search?q=",
     "url": "localhost:3000/post/search?q=",
     "method": "GET",
     "sortNum": 35000,
@@ -262,6 +262,81 @@
       {
         "name": "q",
         "value": "",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "e664b6a7-4d1b-419a-b95f-c6f63193df59",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/search?q=title",
+    "url": "localhost:3000/post/search?q=BATATA",
+    "method": "GET",
+    "sortNum": 37500,
+    "created": "2022-07-18T19:34:41.550Z",
+    "modified": "2022-07-18T19:37:29.660Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1ODE0OTMyMn0.dmVOn-ztry4f-UXxJOn7I3YAY8Fw5Zvv1Eicf_lBVlQ"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "BATATA",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "b240c550-cb72-4830-82ea-0acf33a23f26",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/search?q=content",
+    "url": "localhost:3000/post/search?q=Foguete não tem ré",
+    "method": "GET",
+    "sortNum": 38750,
+    "created": "2022-07-18T19:36:20.575Z",
+    "modified": "2022-07-18T19:36:45.625Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1ODE0OTMyMn0.dmVOn-ztry4f-UXxJOn7I3YAY8Fw5Zvv1Eicf_lBVlQ"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "Foguete não tem ré",
+        "isPath": false
+      }
+    ],
+    "tests": []
+  },
+  {
+    "_id": "5740acb7-49ad-4bd0-bd96-18e8541e8236",
+    "colId": "e9d62805-786d-47c0-9109-45e2914a2faf",
+    "containerId": "6b28373a-a736-47f6-9729-feab7d244387",
+    "name": "/post/search?q=BATATA",
+    "url": "localhost:3000/post/search?q=Foguete não tem ré",
+    "method": "GET",
+    "sortNum": 39375,
+    "created": "2022-07-18T19:37:16.560Z",
+    "modified": "2022-07-18T19:37:16.560Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6Imxld2lzaGFtaWx0b25AZ21haWwuY29tIn0sImlhdCI6MTY1ODE0OTMyMn0.dmVOn-ztry4f-UXxJOn7I3YAY8Fw5Zvv1Eicf_lBVlQ"
+      }
+    ],
+    "params": [
+      {
+        "name": "q",
+        "value": "Foguete não tem ré",
         "isPath": false
       }
     ],
