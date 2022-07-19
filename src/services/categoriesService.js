@@ -11,7 +11,7 @@ const categoriesService = {
   })),
 
   checkIfExists: async (arrayOfId) => {
-    const checked = await db.Category.findAndCountAll({
+    const checked = await db.Category.findAndCountAll({ // retorna um objeto (array) com 2 propriedades: "count" e "rows"
       where: { id: arrayOfId },
     });
 
