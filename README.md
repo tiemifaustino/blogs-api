@@ -20,11 +20,11 @@ Este projeto é uma aplicação em `Node.js` usando o pacote `sequelize` para fa
 - ![sequelize](https://img.shields.io/badge/sequelize-323330?style=for-the-badge&logo=sequelize&logoColor=blue)
 - [Joi](https://joi.dev/api/?v=17.6.0)
 - [ExpressJS Async Errors](https://www.npmjs.com/package/express-async-errors)
-- JWT (Json Web Token)
-- Nodemon
-- Thunder Client
-- DotEnv
-- Docker
+- [JWT](https://jwt.io/) (Json Web Token)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+- [Thunder Client](https://www.thunderclient.com/)
+- [DotEnv](https://www.npmjs.com/package/dotenv)
+- [Docker](https://www.docker.com/)
 
 
 ## 🛠️ Habilidades Utilizadas
@@ -157,5 +157,5 @@ npm install
 npm start
 ```
 
-### 6. Caso utilize a extensão Thunder Client do VS Code:
+### 6. Caso utilize a extensão [Thunder Client](https://www.thunderclient.com/) do VS Code:
 * os endpoints estão salvos no diretório `thunder-tests`
