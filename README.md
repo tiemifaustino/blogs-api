@@ -72,7 +72,7 @@ O Banco possui 4 tabelas criadas com o `ORM Sequelize`:
   | `postId`| `categoryId` |
   |---------|--------------|
 
-
+<a id="section"></a>
 ## 📝 Scripts para deletar o banco e criá-lo novamente:
 
 #### Para deletar o banco de dados:
@@ -151,11 +151,14 @@ docker exec -it blogs_api bash
 npm install
 ```
 
+**⚠️ Após a instalação, rode os [scripts](#section) na sequência (drop, prestart e seed)**
+
 
 ### 5. Dentro do terminal do container `blogs_api` execute a aplicação:
 ```
 npm start
 ```
+**⚠️ Para restaurar o banco, rode os [scripts](#section) na sequência (drop, prestart e seed)**
 
 ### 6. Caso utilize a extensão [Thunder Client](https://www.thunderclient.com/) do VS Code:
 * os endpoints estão salvos no diretório `thunder-tests`
