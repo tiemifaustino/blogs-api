@@ -52,17 +52,17 @@ O Banco possui 4 tabelas criadas com o `ORM Sequelize`:
 - Uma tabela chamada `Users` com os atributos:
 
   |  `id`  | `displayname` | `email` | `password` | `image` |
-   -------- --------------- --------- ------------ ---------
+  |--------|---------------|---------|------------|---------|
 
 - Uma tabela chamada `Categories`, com os atributos:
  
   | `id`| `date` |
-   ----- --------
+  |-----|--------|
 
 - Uma tabela chamada `BlogPosts`, com os atributos:
 
   |  `id`  | `title` | `content` | `userId` | `published` | `updated` |
-   -------- --------- ----------- ---------  ------------- -----------
+  |--------|---------|-----------|----------|-------------|-----------|
 
   `userId` é uma **chave estrangeira**, referenciando o id da tabela `Users`
 
@@ -70,7 +70,7 @@ O Banco possui 4 tabelas criadas com o `ORM Sequelize`:
 - Uma tabela chamada `PostCategories`, contendo uma **chave primária composta** utilizando os dois atributos:
   
   | `postId`| `categoryId` |
-   ----- --------
+  |---------|--------------|
 
 
 ## 📝 Scripts para deletar o banco e criá-lo novamente:
